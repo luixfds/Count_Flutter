@@ -45,9 +45,11 @@ class _AppLCState extends State<AppLC> {
             IconButton(
                 onPressed: refresco,
                 padding: const EdgeInsets.only(right: 30),
-                icon: const Icon(Icons.refresh, size:30,))
+                icon: const Icon(Icons.refresh, size:30,),
+                tooltip: 'Limpar',
+                )
           ],
-          title: const Text('Controle de Pessoas'),
+          title: const Text('Controle de Convidados'),
         ),
 
 
@@ -61,7 +63,8 @@ class _AppLCState extends State<AppLC> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-                Text(num == 20 ? 'Não pode entrar': 'Pode entrar', style: TextStyle(fontSize: 35),),
+                Text(num == 20 ? 'Bloqueado': 'Liberado', style: TextStyle(fontSize: 35),),
+                Text(num == 20 ? 'Limite Maximo atingido': 'Vagas em aberto', style: TextStyle(fontSize: 20),),
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Text('$num', style: const TextStyle(fontSize: 50)),
@@ -80,7 +83,7 @@ class _AppLCState extends State<AppLC> {
                           )
                       ),
                       onPressed: num != 20 ?entrou: null,
-                      child: Text('entrar',
+                      child: Text('+',
                       style: TextStyle(
                           color: num != 0 ? Colors.white: Colors.white.withOpacity(0.8)),
                       )),
@@ -98,7 +101,7 @@ class _AppLCState extends State<AppLC> {
                         )
                       ),
                       onPressed: num != 0 ?saiu: null,
-                      child: Text('sair',
+                      child: Text('-',
                         style: TextStyle(
                             color: num != 0 ? Colors.white: Colors.white.withOpacity(0.8)),)),
                 ],
