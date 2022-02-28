@@ -46,7 +46,7 @@ class _AppLCState extends State<AppLC> {
                 onPressed: refresco,
                 padding: const EdgeInsets.only(right: 30),
                 icon: const Icon(Icons.refresh, size:30,),
-                tooltip: 'Limpar',
+                tooltip: 'Limpaar',
                 )
           ],
           title: const Text('Controle de Convidados'),
